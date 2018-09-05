@@ -1,0 +1,132 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+//@import "~snazzy-info-window/dist/snazzy-info-window";
+
+#map_canvas {
+  height: 100%;
+}
+
+
+
+
+agm-map {
+  height: 100%;
+}
+
+.segment-ios {
+  .segment-button{
+    &.active{
+      background: color($colors, primary)!important;
+      color:#f4f4f4;
+    }
+  }
+}
+.segment-md {
+  .segment-button{
+    &.active{
+      border-color: color($colors, primary)!important;
+    }
+  }
+}
+.alert{
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  &__succes{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  &__float{
+    position: fixed;
+    top: 60px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.report{
+  &__title{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__camera {
+    text-align: center;
+  }
+  &__button{
+    background: transparent;
+  }
+  &__image{
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    &--none{
+      border: 3px solid  #f9f9f9;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      ion-icon{
+        font-size: 4.2em;
+        color: #e2e2e2;
+      }
+      h6{
+        color: color($colors, secondary);
+      }
+    }
+  }
+}
+
+
+.fab__filter{
+  ion-fab-list[side=top]{
+    right: 9px;
+    align-items: flex-end;
+  }
+  .filter__list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     > span{
+      margin-right: 20px;
+      background: color($colors, light);
+      padding: 6px 20px;
+       border-radius: 4px;
+    }
+  }
+}
+/*Menu*/
+.menu-inner{
+  .header{
+    .toolbar-background{
+      background-color: #81d4fa;
+    }
+    .toolbar-title{
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+  }
+}

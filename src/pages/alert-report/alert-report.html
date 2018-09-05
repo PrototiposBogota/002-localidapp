@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Reportar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <h3 class="report__title">{{ name}}</h3>
+
+  <div class="report__camera">
+    <button class="report__button" (click)="openCamera()">
+      <div class="report__image report__image--none" *ngIf="!takenPhoto; else elseBlock">
+        <div class="report__content">
+          <ion-icon name="camera" ></ion-icon>
+          <h6>Tomar foto</h6>
+        </div>
+      </div>
+      <ng-template #elseBlock>
+        <div class="report__image">
+          <img [src]="photo" alt="">
+        </div>
+      </ng-template>
+    </button>
+  </div>
+
+  <div class="report__comment">
+    <ion-item>
+      <ion-label  floating>Comentarios (opcional)</ion-label>
+      <ion-textarea [(ngModel)]="comment" ></ion-textarea>
+    </ion-item>
+  </div>
+
+  <div class="report__button">
+    <button ion-button block (click)="doReport()">
+      Reportar
+    </button>
+  </div>
+
+  <div class="alert alert__succes alert__float" *ngIf="response">
+    Datos guardados exitosamente
+  </div>
+</ion-content>

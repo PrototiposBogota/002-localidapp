@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Seleccionar Categoría</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div padding>
+    <ion-segment>
+      <ng-container *ngFor="let category of categories.problematics;  let i = index" >
+        <ion-segment-button   (click)="switchTab(i)" [ngClass]="{active : i == tab}" value="{{ i }}">
+          {{ category.title }}
+        </ion-segment-button>
+      </ng-container>
+    </ion-segment>
+  </div>
+
+  <div >
+    <div *ngFor="let category of categories.problematics;  let i = index">
+      <ion-list *ngIf="tab == i">
+
+        <button ion-item *ngFor="let alert of category.categories" (click)="launchReport(alert.id, alert.title)">
+            <ion-thumbnail item-start>
+              <img [src]="categories.base_path + '/' + alert.icon">
+            </ion-thumbnail>
+            <h2>{{ alert.title }}</h2>
+        </button>
+
+      </ion-list>
+    </div>
+
+  </div>
+
+</ion-content>

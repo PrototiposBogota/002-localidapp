@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mi localidad</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!--<agm-map [zoom]="18" [latitude]="lat" [longitude]="lng">-->
+  <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
+
+
+  <!--<agm-marker *ngFor="let marker of markers.reports" [latitude]="marker.latitude" [longitude]="marker.longitude"></agm-marker>-->
+  <!--</agm-map>-->
+
+  <div id="map_canvas">
+    <ion-fab bottom left class="fab__alert">
+      <button ion-fab (click)="doReport()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+    </ion-fab>
+
+    <ion-fab bottom right class="fab__filter">
+
+      <button ion-fab> <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon></button>
+      <ion-fab-list side="top">
+        <div class="filter__list"><span>Vías</span><button ion-fab>v</button></div>
+        <div class="filter__list"><span>Basuras</span><button ion-fab>B</button></div>
+        <div class="filter__list"><span>Seguridad</span><button ion-fab>s</button></div>
+      </ion-fab-list>
+
+    </ion-fab>
+
+  </div>
+
+
+</ion-content>
